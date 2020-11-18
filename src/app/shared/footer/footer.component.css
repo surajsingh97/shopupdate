@@ -1,0 +1,17 @@
+/* #foot{
+    padding:4em 0;
+} */
+.ftco-heading-2 {
+    font-size: 17px;
+    font-weight: lighter;
+    font-family: monospace;
+}
+a {
+    color: black;
+}
+#gap {
+    padding-left: 10px;
+}
+#gap1 {
+    font-size: 30px;
+}

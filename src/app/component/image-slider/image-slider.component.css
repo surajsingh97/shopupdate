@@ -1,0 +1,14 @@
+.d-block {
+    height: 360px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.h3-responsive {
+    float: left;
+}
+@media only screen and (max-width: 650px) {
+    .d-block {
+        height: 290px;
+    }
+}

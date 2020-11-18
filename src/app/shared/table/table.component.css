@@ -1,0 +1,27 @@
+table {
+    width: 100%;
+    padding-top: 150px;
+}
+#detail {
+    font-size: 20px;
+    color: blue;
+}
+
+#get {
+    border-radius: 10px;
+    color: black;
+    background-color: teal;
+    font-weight: lighter;
+    border: 1px solid black;
+}
+#productImage {
+    height: 50px;
+    border-radius: 25px;
+}
+.btn-outline-info {
+    float: right;
+}
+.mat-paginator {
+    display: flex;
+    justify-content: center;
+}

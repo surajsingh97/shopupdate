@@ -1,0 +1,279 @@
+<section class="signup-container">
+    <form [formGroup]="signupform">
+        <div>
+            <h1 style="font-weight: lighter">{{ msg }}</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="fname">User Name</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter User Name"
+                        formControlName="userName"
+                    />
+                    <span
+                        *ngIf="
+                            !signupform.get('userName').valid &&
+                            signupform.get('userName').touched
+                        "
+                        class="help-block"
+                        ><span
+                            *ngIf="
+                                signupform.get('userName').errors[
+                                    'nameisforbiddentrue'
+                                ]
+                            "
+                            class="help-block"
+                        >
+                            *This Name Is Invalid!</span
+                        >
+                        <span
+                            *ngIf="
+                                signupform.get('userName').errors['required']
+                            "
+                            class="help-block"
+                        >
+                            *This Field Is Required!</span
+                        ></span
+                    >
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="lname">Full Name</label>
+                    <input
+                        type="text"
+                        formControlName="fullName"
+                        class="form-control"
+                        placeholder="Enter Full Name"
+                    />
+                    <span
+                        *ngIf="
+                            !signupform.get('fullName').valid &&
+                            signupform.get('fullName').touched
+                        "
+                        class="help-block"
+                        >*This Field is Required!</span
+                    >
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <div class="radio" *ngFor="let gender of genders">
+                        <input
+                            type="radio"
+                            formControlName="gender"
+                            [value]="gender"
+                        />
+                        {{ gender }}
+                    </div>
+                    <br />
+                    <span
+                        *ngIf="
+                            !signupform.get('gender').valid &&
+                            signupform.get('gender').touched
+                        "
+                        class="help-block"
+                        ><span
+                            *ngIf="signupform.get('gender').errors['required']"
+                            class="help-block"
+                            >*This Field Is Required!
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                        type="email"
+                        formControlName="email"
+                        class="form-control"
+                        placeholder="Enter your Email"
+                    />
+                    <span
+                        *ngIf="
+                            !signupform.get('email').valid &&
+                            signupform.get('email').touched
+                        "
+                        class="help-block"
+                        ><span
+                            *ngIf="signupform.get('email').errors['required']"
+                            class="help-block"
+                        >
+                            *This Field Is Required!</span
+                        >
+                        <span
+                            *ngIf="signupform.get('email').errors['email']"
+                            class="help-block"
+                            >*Email Is Not Valid!
+                        </span></span
+                    >
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="number"> Mobile Number</label>
+                    <input
+                        type="tel"
+                        class="form-control"
+                        formControlName="mobileNumber"
+                        placeholder="Enter Mobile Number"
+                    />
+                    <span
+                        *ngIf="
+                            !signupform.get('mobileNumber').valid &&
+                            signupform.get('mobileNumber').touched
+                        "
+                        class="help-block"
+                        ><span
+                            *ngIf="
+                                signupform.get('mobileNumber').errors[
+                                    'required'
+                                ]
+                            "
+                            class="helip-block"
+                        >
+                            *This Field Is Required! </span
+                        ><span
+                            *ngIf="
+                                signupform.get('mobileNumber').errors[
+                                    'maxlength'
+                                ]
+                            "
+                            class="help-block"
+                        >
+                            *Number Is Not Valid!
+                        </span></span
+                    >
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    formControlName="password"
+                    class="form-control"
+                    placeholder="Enter Password"
+                />
+                <span
+                    *ngIf="
+                        !signupform.get('password').valid &&
+                        signupform.get('password').touched
+                    "
+                    class="help-block"
+                    ><span
+                        *ngIf="signupform.get('password').errors['required']"
+                        class="help-block"
+                    >
+                        *This Field Is Required!</span
+                    ><span
+                        *ngIf="signupform.get('password').errors['minlength']"
+                        class="help-block"
+                        >Must Contain 8 character</span
+                    >
+                </span>
+            </div>
+            <div class="col-md-6">
+                <label for="confirmpassword">Confirm Password</label>
+                <input
+                    type="password"
+                    formControlName="confirmPassword"
+                    class="form-control"
+                    placeholder="Renter Password"
+                />
+                <span
+                    *ngIf="
+                        !signupform.get('confirmPassword').valid &&
+                        signupform.get('confirmPassword').touched
+                    "
+                    class="help-block"
+                >
+                    <span
+                        *ngIf="
+                            signupform.get('confirmPassword').errors['required']
+                        "
+                        class="help-block"
+                    >
+                        *This Field Is Required!</span
+                    >
+                    <span
+                        *ngIf="
+                            signupform.get('confirmPassword').errors[
+                                'passwordvalidty'
+                            ]
+                        "
+                        class="help-block"
+                    >
+                        *Password Must Be same</span
+                    >
+                </span>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <div class="form-check">
+                        <input
+                            class="form-check-input"
+                            type="checkbox"
+                            formControlName="privacy"
+                        />
+                        I agree to the <a href="">Terms Of Use</a> ,
+                        <a href="">Privacy Policy</a> &
+                        <a href="">Refund Policy</a>
+                        <span
+                            *ngIf="
+                                !signupform.get('privacy').valid &&
+                                signupform.get('privacy').touched
+                            "
+                            class="help-block"
+                            ><span
+                                *ngIf="
+                                    signupform.get('privacy').errors['required']
+                                "
+                                class="help-block"
+                            >
+                                *Please accept terms & conditions
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div>
+                    <button
+                        id="butto"
+                        type="submit"
+                        class="btn btn-info btn-block"
+                        (click)="onsubmit()"
+                    >
+                        Create My Account
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="raw" class="row">
+            <div class="col-md-12">
+                <div>
+                    Already have an account?
+                    <a id="back" href="javascript:void(0)" routerLink="/login"
+                        >Click Here.</a
+                    >
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

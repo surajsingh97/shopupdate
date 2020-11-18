@@ -1,0 +1,125 @@
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.col-sm-6 {
+    width: 50%;
+}
+.col-sm-6 .col-md-3 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.card {
+    border: none;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.space-categ {
+    margin-top: 10px;
+}
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+img {
+    max-width: 100%;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+.space-categ .card-body {
+    padding: 0.25rem 0 0 !important;
+}
+.card-body {
+    padding: 0.25rem 0 0.75rem;
+}
+.text-center {
+    text-align: center !important;
+}
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+.item_categ,
+.item_categ_slide {
+    font-family: 'lato', sans-serif;
+    font-weight: 100;
+    color: #c96;
+    text-transform: uppercase;
+}
+.item_categ {
+    margin-top: 0;
+    font-size: 5px;
+    color: #585858;
+}
+.container-fluid {
+    width: 100%;
+    margin-top: 15px;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.col-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.hover-image {
+    height: 100%;
+    width: 100%;
+    /* margin-left: 15px; */
+}
+.item_categ {
+    font-size: 27px !important;
+    font-weight: 500 !important;
+    margin: 3% 0 0 !important;
+    line-height: 1.6;
+}
+.head-tag {
+    font-size: 27px !important;
+    font-weight: 500 !important;
+    margin: 3% 0 0 !important;
+    line-height: 1.6;
+}
+.padding-t {
+    padding-top: 2%;
+}
+.carousel {
+    width: 20%;
+}
+.container {
+    margin-left: 5px;
+    border: 1px solid grey;
+}
+.details {
+    font-size: 15px;
+    color: #111;
+    margin-bottom: 0;
+    font-family: sans-serif;
+    font-weight: lighter;
+    margin-top: 10px;
+}
+@media only screen and (max-width: 768px) {
+    .response {
+        margin-top: 10px;
+    }
+}

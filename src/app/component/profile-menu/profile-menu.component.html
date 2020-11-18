@@ -1,0 +1,23 @@
+<div class="profile-menu">
+    <div class="authcontainer" *ngIf="!setnav.loggedIn()">
+        <h6>Welcome</h6>
+        <p class="info">To access account</p>
+        <div class="login-button">
+            <button class="btn" routerLink="/auth">
+                <span>LOGIN/SIGNUP</span>
+            </button>
+        </div>
+    </div>
+    <div class="loggedcontianer" *ngIf="setnav.loggedIn()">
+        <p class="info2">Hello!</p>
+    </div>
+    <hr />
+    <a
+        class="dropdown-item"
+        href="javascript:void('0')"
+        *ngIf="setnav.loggedIn()"
+        (click)="logout()"
+        >Logout</a
+    >
+    <a class="dropdown-item" href="javascript:void('0')">Contact Us</a>
+</div>

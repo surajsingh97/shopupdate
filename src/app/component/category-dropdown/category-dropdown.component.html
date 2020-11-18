@@ -1,0 +1,14 @@
+<div class="dropdown" id="div1">
+    <a class="dropdown-item" id="heading">Topwear</a>
+    <div class="dropdown" *ngFor="let top of topWear">
+        <a class="dropdown-item" (click)="toogle(top)">{{ top }}</a>
+    </div>
+    <a class="dropdown-item" id="heading">Bottomwear</a>
+    <div class="dropdown" *ngFor="let bottom of bottomWear">
+        <a class="dropdown-item" (click)="toogle(bottom)">{{ bottom }}</a>
+    </div>
+    <a class="dropdown-item" id="heading">Footwear</a>
+    <div class="dropdown" *ngFor="let foot of footWear">
+        <a class="dropdown-item" (click)="toogle(foot)">{{ foot }}</a>
+    </div>
+</div>

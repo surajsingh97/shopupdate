@@ -1,0 +1,122 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav>
+        <mat-nav-list>
+            <a
+                class="close-but"
+                (click)="sidenav.toggle()"
+                href=""
+                mat-list-item
+                ><i class="fa fa-close close-btn text-right"></i></a
+            ><br />
+            <a href="#" class="list-item" mat-list-item (click)="showMen()"
+                >MEN &nbsp;<i class="fa fa-caret-down"></i
+            ></a>
+            <app-category-dropdown
+                mat-list-item
+                *ngIf="showcategory"
+            ></app-category-dropdown>
+            <a href="#" mat-list-item class="list-item" (click)="showWomen()"
+                >WOMEN &nbsp;<i class="fa fa-caret-down"></i
+            ></a>
+            <app-category-dropdown
+                mat-list-item
+                *ngIf="showwomenCategory"
+            ></app-category-dropdown>
+            <a href="#" mat-list-item class="list-item" (click)="showKid()"
+                >KIDS &nbsp;<i class="fa fa-caret-down"></i
+            ></a>
+            <app-category-dropdown
+                mat-list-item
+                *ngIf="showkidCategory"
+            ></app-category-dropdown>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-toolbar color="bg-white">
+        <mat-toolbar-row>
+            <button
+                mat-icon-button
+                (click)="sidenav.toggle()"
+                fxShow="true"
+                fxHide.gt-sm
+            >
+                <mat-icon>menu</mat-icon>
+            </button>
+            <a
+                href="javascript:void('0')"
+                routerLink="/home"
+                style="color: black"
+                ><span style="font-family: cursive">Modern closet</span></a
+            >
+            <span class="menu-spacer"></span>
+            <div fxShow="true" fxHide.lt-md>
+                <a
+                    href="#"
+                    id="nav-link"
+                    class="action-content"
+                    data-toggle="dropdown"
+                    mat-button
+                    >MEN</a
+                >
+                <app-header-dropdown
+                    class="dropdown-menu"
+                    style="margin-top: 12px"
+                ></app-header-dropdown>
+                <a id="nav-link" href="#" data-toggle="dropdown" mat-button
+                    >WOMEN</a
+                >
+                <app-header-dropdown
+                    class="dropdown-menu"
+                    style="margin-top: 12px"
+                ></app-header-dropdown>
+                <a id="nav-link" href="#" data-toggle="dropdown" mat-button
+                    >KIDS</a
+                >
+                <app-header-dropdown
+                    class="dropdown-menu"
+                    style="margin-top: 12px"
+                ></app-header-dropdown>
+            </div>
+            <span class="menu-spacer"></span>
+            <span class="menu-spacer"></span>
+            <app-search></app-search>
+            <span class="menu-spacer1"></span>
+            <span class="menu-spacer"></span>
+            <div class="action">
+                <a href="#" class="action-content" data-toggle="dropdown"
+                    ><i
+                        class="fa fa-user"
+                        mat-button
+                        style="font-size: 24px"
+                    ></i
+                ></a>
+                <div
+                    class="dropdown-menu"
+                    style="margin: 18px 70px; width: 15%"
+                >
+                    <app-profile-menu></app-profile-menu>
+                </div>
+                <a class="action-content" href="javascript:void('0')"
+                    ><i
+                        class="fa fa-heart-o"
+                        mat-button
+                        style="font-size: 24px"
+                    ></i
+                ></a>
+                <a class="action-content" href="javascript:void('0')"
+                    ><i
+                        class="fa fa-shopping-bag"
+                        mat-button
+                        style="font-size: 24px"
+                    ></i
+                ></a>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <div class="content" #main>
+        <router-outlet></router-outlet>
+    </div>
+    <div class="footer" style="margin-top: 20px" #footer>
+        <app-footer></app-footer>
+    </div>
+</mat-sidenav-container>

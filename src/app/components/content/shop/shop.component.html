@@ -1,0 +1,78 @@
+<section style="padding: 50px 0">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <app-filters></app-filters>
+            </div>
+            <div class="col-md-9" style="border: 1px solid #efefef">
+                <div class="sort-by-top-div">
+                    <div class="float-right">
+                        <select class="sort-by-btn" (change)="sorting($event)">
+                            <option hidden="" value="">Sort by</option>
+                            <option value="New Arrival">New Arrival</option>
+                            <option value="Low to High">
+                                <a
+                                    href="javascript:void('0')"
+                                    style="color: black"
+                                >
+                                    Low to High</a
+                                >
+                            </option>
+                            <option value="High to Low">
+                                <a
+                                    href="javascript:void('0')"
+                                    style="color: black"
+                                >
+                                    High to Low</a
+                                >
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div
+                        class="col-sm col-md-6 col-lg-3 ftco-animate"
+                        style="border: 1px solid #f7eee4; margin-left: 5px"
+                        *ngFor="let item of post | paginate: config"
+                    >
+                        <div class="product">
+                            <a href="javascript:void('0')" class="img-prod"
+                                ><img
+                                    class="img-fluid"
+                                    src="http://localhost:3000/static/{{
+                                        item.file
+                                    }}"
+                                    alt="Colorlib Template"
+                                />
+                            </a>
+                        </div>
+                        <div class="text py-3 px-3">
+                            <h3>
+                                <a href="javascript:void('0')">{{
+                                    item.productName
+                                }}</a>
+                            </h3>
+                            <div class="d-flex">
+                                <div class="pricing">
+                                    <p class="price">
+                                        <span class="mr-2 price-dc">{{
+                                            item.Price | currency: 'INR'
+                                        }}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div style="text-align: center" class="container-fluid">
+                    <pagination-controls
+                        directionLinks="true"
+                        (pageChange)="pageChanged($event)"
+                    ></pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

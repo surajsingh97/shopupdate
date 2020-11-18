@@ -1,0 +1,14 @@
+.content-heading {
+    color: #ee5f73;
+    font-size: 14px;
+}
+.sub-head {
+    /* font-weight: lighter; */
+    font-size: 13px;
+    line-height: 23px !important;
+    font-weight: 400;
+    color: #282c3f;
+}
+.menu-spacer {
+    flex: 0.3 0.3 auto;
+}

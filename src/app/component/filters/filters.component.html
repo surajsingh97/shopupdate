@@ -1,0 +1,24 @@
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let cat of categories">
+        <mat-expansion-panel-header>
+            {{ cat.heading }}
+        </mat-expansion-panel-header>
+        <div *ngFor="let val of cat.value">
+            <div class="custom-control custom-radio">
+                <input
+                    (click)="onSelected(val)"
+                    type="radio"
+                    name="groupOfDefaultCheckbox"
+                    class="custom-control-input"
+                    id="defaultInline1_{{ val }}"
+                />
+                <label
+                    class="custom-control-label"
+                    (click)="onClick($event)"
+                    for="defaultInline1_{{ val }}"
+                    >{{ val }}</label
+                >
+            </div>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>

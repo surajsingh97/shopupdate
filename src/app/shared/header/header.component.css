@@ -1,0 +1,33 @@
+.menu-spacer {
+    flex: 0.1 0.1 auto;
+}
+.menu-spacer1 {
+    flex: 0.4 0.4 auto;
+}
+.action-content {
+    margin-left: 10px;
+    color: black;
+}
+.close-btn {
+    margin-left: 100px;
+}
+.close-but:hover {
+    background-color: white;
+}
+#nav-link {
+    font-weight: lighter;
+    font-family: cursive;
+    font-size: 16px;
+}
+.list-item {
+    margin-top: 10px;
+}
+.dropdown-menu {
+    /* width: 40%; */
+    overflow-block: 20px;
+}
+@media only screen and (max-width: 589px) {
+    .py-1 {
+        width: 200px;
+    }
+}

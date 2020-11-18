@@ -1,0 +1,50 @@
+#b {
+    margin-left: 20px;
+}
+#butto {
+    border-radius: 50px;
+}
+
+#social0 {
+    float: right;
+    padding-right: 15px;
+}
+
+#rad {
+    margin-left: 5px;
+    padding-left: 2px;
+}
+
+#raw {
+    margin-left: 80px;
+    margin-top: 10px;
+}
+#back:hover {
+    color: blue;
+}
+h4 {
+    font-weight: lighter;
+    font-size: 30px;
+}
+.alert {
+    background-color: rgb(233, 92, 92);
+    color: black;
+}
+
+input {
+    border-radius: 10px;
+}
+* {
+    box-sizing: border-box;
+}
+.help-block {
+    color: red;
+}
+form {
+    width: 450px;
+    margin-left: 25px;
+    /* background-color:whitesmoke;  */
+    /* padding-top:50px; */
+    margin-bottom: 20px;
+    /* border:1px solid black; */
+}

@@ -1,0 +1,28 @@
+.dropdown-item {
+    font-family: cursive;
+}
+.info {
+    font-weight: lighter;
+    font-size: 12px;
+    height: 14px;
+    margin-left: 15px;
+}
+.info2 {
+    font-size: 14px;
+    margin-left: 15px;
+    font-family: cursive;
+    font-weight: lighter;
+}
+h6 {
+    margin-left: 15px;
+    font-weight: 350;
+}
+
+.btn {
+    color: #ff3f6c;
+    border: 1px solid salmon;
+}
+.login-button {
+    margin-top: 20px;
+    margin-left: 15px;
+}

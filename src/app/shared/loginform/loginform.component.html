@@ -1,0 +1,76 @@
+<form (ngSubmit)="onsubmit(f)" #f="ngForm">
+    <h2 id="head2">Login</h2>
+    <div class="form-group">
+        <div *ngIf="show" class="alert" role="alert">
+            {{ msg }}
+        </div>
+        <div class="col-md-10">
+            <label for="email">Email</label>
+            <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                placeholder="Enter registered Email"
+                ngModel
+                name="email"
+                required
+                email
+                #email="ngModel"
+            />
+            <span class="help-block" *ngIf="!email.valid && email.touched"
+                >*Please enter a valid email!</span
+            >
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            <label for="Password">Password </label>
+            <input
+                type="password"
+                class="form-control"
+                ngModel
+                name="password"
+                id="exampleInputPassword1"
+                #password
+                placeholder="Enter your Password"
+                required
+                #pass="ngModel"
+            />
+            <span *ngIf="!pass.valid && pass.touched" class="help-block"
+                >*Enter valid password</span
+            >
+        </div>
+    </div>
+    <div id="b" class="form-check">
+        <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" /> Remember me
+        </label>
+        <a id="a" routerLink="/forgotpass">Forgot Password?</a>
+    </div>
+    <div class="loginbutton">
+        <button type="submit" id="but" class="btn btn-info btn-lg">
+            Login
+        </button>
+    </div>
+    <p id="para2">Or Login With</p>
+    <div class="social form-group text-center pt-2 logo-align">
+        <input
+            type="submit"
+            class="site-btn-google"
+            id="social"
+            value="Sign In WIth Google"
+        /><img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAA3QAAAN0BcFOiBwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAQOSURBVFiFvZdbTFxlFIW/fc4AA8jVGGwlQsMQoEUrCTZUW6ORay9EILWNpok+SOKDjbZRmthETeMz1Zroi40xMVW0qZRLaSnipZq21igBCqU2Ek0rpQ9cLIVh5pztA1hhOmdmwI7r4Tyctc5e6/+T8/97i6oSEYqLYybSXNWirEXUg+JB8KDEAqPANYTzYhmdPrd+nd5+ZjKSshIuwPgTRammGVtvwy6B+yJLyw0VfTslZqyR9kve5QV4S4zJ7x5+A2Q3cFeExoG4LCJ7kjrPNC8pwFhZcYqprsOgVcs0DkRHspVQQ3f3TCDhCnwxWV6Sa9quY4jm3yHzCdR+N5g5BOzAVGlJhqXai3DPHTIfEtuuTvrqx4tOgkU7YIkegvDmCldEGUR0EBUbEQ9oPrBqgeyEbc3uSO3+eTxUrVsBJsrWvSgqm0KJBbpR3Zfcde6HYPx42frHDbX3AEPJ6Vmv0dRkhVuMqCregxk53pasHmxJdNDdFNUdSV3nWsIVXCoMADN/tD5u+8VEifcHNVdlazTMAUSbMP1p/A6s1PE4vEdysa8nLBBQm9R19mg0zAEM627KgZUAkurFvXMAM28MAIVvo2kOYKhF5aI3sRZxNZdwrRu5JiIN0TQHEF8nzUB1EG7EVaorwhWoOTDzqahsX6b/9waQ7UAOLLNo5BDuNYCsoJxwIer+Ohcg+HWoc79oNKFgG8CwA/lgtAMAVx0DAIX/RwCXU4B+Oznp1c4NxSfLTp8PVUHQd8D40llhrwXZG/xb+sXfyWaF1oVEu72Cfb5Cexaje3BzR2m4ZYRCbaP3NPBoME7FKDLMMTqAKwA2QqM/lwbfA/gQQ9AnC1orti7XvK5x9hknc0HOHn055heDbWoBH93AxS7fQxyyVgUqP1ndXvHYUs2fapzZqNgHnXhb7Q9g/jacst0f1s4+cv0bO2gvkqTK8YL2ii2RmtcdmNlpIKdA0h0k4zHi/uxWgJTy6d/+VPf+EDUTUFoK2ipOFrRWrXcSrWmr3FjYUvfFlPvCx0CsczlpbHqFaQjoCQvaKptBg90LgRhGGEJ1aK4l0xyQ1cy3ZKImGaP1pE0EaapVDx/d7X5W5w/ART2h6eJ5y08PkBkmQDZKNkg5Asw9/vUQi5GM9/G6h8kYrUfU/Ifqdv3lfk4XnL63zQWFxyo9lmk3z6/oPyNheg2ZV/di+lP6XL64DU0NTCzkbzvv+6o7flUrvkTAcZpZCm7G9/NH5ps/SYxdFWgOIUYzQSSvvfx1URpY5mgmcFlFGgY2dRxx1IQbTnNOlaXEeo0XgJeA+yMxVhgX1f3mdOp7fduaZkOGjHQ8l8+fNvMSJ7eIrUVArggeBQ+KH+gD+sTQXkT7Ykyjt6f8xFQkdf8GbfON88yeJlUAAAAASUVORK5CYII="
+        />
+    </div>
+    <div class="social form-group text-center pt-2 logo-align">
+        <input
+            type="submit"
+            class="site-btn-facebook"
+            id="social"
+            value="Sign In With Facebook"
+        /><img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAHdElNRQfjDB4KEwU1ID7qAAAA4ElEQVRIx2NgwAv+M/2P+L/m/6P/3//DQCsD8eC/0v8L/9HBUlQ1LHi0yzAcZZAgZAkTHrl5hLXjMeC/GYMrMd7E7QJfHOJfiQ0DYxTeRoYZDK8ZGBgYGG4S4y4GBob/p5BC/s9/XtK9wIHE/sj4mXQDkME/3FLEGYAHoAXifxMGZyhTFEmY8385TAHDcsbH+IJu6X9CoBi/FxgJupkRvwEkg8FnwGuCOl7hDZL/TAz8UOYRBi248FsGVSjrH+NHVB1o6YDxH8N7qFF/kc1lfE+3MBg1YNSAwWbAAxxsNAAA9/B3b6iUNKIAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTktMTItMzBUMTA6MTk6MDUrMDA6MDBk90HnAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE5LTEyLTMwVDEwOjE5OjA1KzAwOjAwFar5WwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAAASUVORK5CYII="
+        />
+    </div>
+</form>

@@ -1,0 +1,317 @@
+<section id="gram">
+    <div class="container3">
+        <div class="form-subhead">
+            <h4>New Product</h4>
+
+            <hr />
+        </div>
+        <form id="form1" [formGroup]="newitem">
+            <h2>Basic Info</h2>
+            <div class="form-group">
+                <div class="col-md-8">
+                    <label for="Product Name">Product Name</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        formControlName="productName"
+                        id="exampleInputEmail1"
+                        #name
+                    />
+                    <span
+                        *ngIf="
+                            !newitem.get('productName').valid &&
+                            newitem.get('productName').touched
+                        "
+                        class="help-block"
+                    >
+                        <span
+                            *ngIf="
+                                newitem.get('productName').errors['required']
+                            "
+                            class="help-block"
+                        >
+                            *This Field Is Required!</span
+                        ></span
+                    >
+                </div>
+            </div>
+            <div class="form-group green-border-focus">
+                <div class="col-md-8">
+                    <label for="Product Description">Product Description</label>
+                    <textarea
+                        class="form-control"
+                        formControlName="Description"
+                        id="exampleFormControlTextarea5"
+                        rows="3 "
+                    ></textarea>
+                    <span
+                        *ngIf="
+                            !newitem.get('Description').valid &&
+                            newitem.get('Description').touched
+                        "
+                        class="help-block"
+                    >
+                        <span
+                            *ngIf="
+                                newitem.get('Description').errors['required']
+                            "
+                            class="help-block"
+                        >
+                            *This Field Is Required!</span
+                        ></span
+                    >
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-8">
+                    <label for="price">Price</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        formControlName="Price"
+                        id="exampleInputEmail1"
+                        placeholder="Enter Price"
+                    />
+                    <span
+                        *ngIf="
+                            !newitem.get('Price').valid &&
+                            newitem.get('Price').touched
+                        "
+                        class="help-block"
+                    >
+                        <span
+                            *ngIf="newitem.get('Price').errors['required']"
+                            class="help-block"
+                        >
+                            *This Field Is Required!</span
+                        ></span
+                    >
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-8">
+                    <label for="gender">Gender</label>
+                    <select
+                        class="custom-select custom-select-sm"
+                        formControlName="Gender"
+                    >
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                    <span
+                        *ngIf="
+                            !newitem.get('Gender').valid &&
+                            newitem.get('Gender').touched
+                        "
+                        class="help-block"
+                    >
+                        <span
+                            *ngIf="newitem.get('Gender').errors['required']"
+                            class="help-block"
+                        >
+                            *This Field Is Required</span
+                        ></span
+                    >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-8">
+                    <label for="size">size</label>
+                    <select
+                        class="custom-select custom-select-sm"
+                        formControlName="Size"
+                    >
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Large">Large</option>
+                        <option value="X-Large">X-Large</option>
+                        <option value="XX-Large">X-Large</option>
+                    </select>
+                    <span
+                        *ngIf="
+                            !newitem.get('Size').valid &&
+                            newitem.get('Size').touched
+                        "
+                        class="help-block"
+                    >
+                        <span
+                            *ngIf="newitem.get('Size').errors['required']"
+                            class="help-block"
+                        >
+                            *This Field Is Required</span
+                        ></span
+                    >
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-8">
+                    <label for="Quantity">Quantity</label>
+                    <input
+                        type="number"
+                        class="form-control"
+                        formControlName="Quantity"
+                        id="exampleInputEmail1"
+                        placeholder="Enter Quantity"
+                    />
+                    <span
+                        *ngIf="
+                            !newitem.get('Quantity').valid &&
+                            newitem.get('Quantity').touched
+                        "
+                        class="help-block"
+                    >
+                        <span
+                            *ngIf="newitem.get('Quantity').errors['required']"
+                            class="help-block"
+                        >
+                            *This Field Is Required!</span
+                        ></span
+                    >
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-8">
+                    <label for="upload" class="col-form-label">Upload</label>
+                    <input
+                        type="file"
+                        (change)="selectImages($event)"
+                        formControlName="File"
+                        placeholder="Select Image"
+                        class="form-control"
+                    />
+                    <span
+                        *ngIf="
+                            !newitem.get('File').valid &&
+                            newitem.get('File').touched
+                        "
+                        class="help-block"
+                    >
+                        <span
+                            *ngIf="newitem.get('File').errors['required']"
+                            class="help-block"
+                        >
+                            *This Field Is Required</span
+                        ></span
+                    >
+                </div>
+            </div>
+            <br />
+            <div class="head">
+                <h2>Supplier & category</h2>
+            </div>
+            <div class="form-group">
+                <div class="col-md-8">
+                    <label for="Supplier">Supplier</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        formControlName="Suplier"
+                        id="exampleInputEmail1"
+                    />
+                    <span
+                        *ngIf="
+                            !newitem.get('Suplier').valid &&
+                            newitem.get('Suplier').touched
+                        "
+                        class="help-block"
+                    >
+                        <span
+                            *ngIf="newitem.get('Suplier').errors['required']"
+                            class="help-block"
+                        >
+                            *This Field Is Required</span
+                        ></span
+                    >
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-8">
+                    <label for="category">category</label>
+                    <select
+                        class="custom-select custom-select-sm"
+                        formControlName="Category"
+                    >
+                        <option value="Topwear">Topwear</option>
+                        <option value="Bottomwear">Bottomwear</option>
+                        <option value="Footwear">Footwear</option>
+                    </select>
+                    <span
+                        *ngIf="
+                            !newitem.get('Category').valid &&
+                            newitem.get('Category').touched
+                        "
+                        class="help-block"
+                    >
+                        <span
+                            *ngIf="newitem.get('Category').errors['required']"
+                            class="help-block"
+                        >
+                            *This Field Is Required</span
+                        ></span
+                    >
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-8">
+                    <label for="subCategory">Sub category</label>
+                    <select
+                        class="custom-select custom-select-sm"
+                        formControlName="subCategory"
+                    >
+                        <option value="Tshirt">TShirt</option>
+                        <option value="Shirts">Shirts</option>
+                        <option value="Jackets">Jackets</option>
+                        <option value="Suits">Suits</option>
+                        <option value="Jeans">Jeans</option>
+                        <option value="Trousers">Trousers</option>
+                        <option value="Shorts">Shorts</option>
+                        <option value="Joggers">Joggers</option>
+                        <option value="Casual shoes">Casual shoes</option>
+                        <option value="Sports shoes">Sports shoes</option>
+                        <option value="Formal shoes">Formal shoes</option>
+                        <option value="Sneakers">Sneakers</option>
+                    </select>
+                    <span
+                        *ngIf="
+                            !newitem.get('subCategory').valid &&
+                            newitem.get('subCategory').touched
+                        "
+                        class="help-block"
+                    >
+                        <span
+                            *ngIf="
+                                newitem.get('subCategory').errors['required']
+                            "
+                            class="help-block"
+                        >
+                            *This Field Is Required</span
+                        ></span
+                    >
+                </div>
+            </div>
+            <!-- <br><br> -->
+            <div class="button">
+                <button
+                    type="submit"
+                    class="btn btn-success"
+                    (click)="onsubmit($event)"
+                >
+                    Save
+                </button>
+                <button
+                    type="submit"
+                    id="cancel"
+                    *ngIf="editMode"
+                    class="btn btn-danger"
+                    (click)="clear()"
+                >
+                    Cancel
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+<!-- </div> -->
+
+<!-- <router-outlet></router-outlet> -->

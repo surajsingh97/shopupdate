@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+}
+.container3 {
+    /* background-color: whitesmoke; */
+    width: 500px;
+    padding-left: 50px;
+    padding-bottom: 20px;
+    margin-left: 20px;
+}
+.alert {
+    background-color: rgb(233, 92, 92);
+    color: black;
+}
+#b {
+    margin-left: 20px;
+}
+.help-block {
+    color: red;
+}
+
+#a {
+    margin-left: 25px;
+    color: darkgrey;
+}
+#a:hover {
+    color: rgb(93, 93, 196);
+}
+#but {
+    margin-top: 20px;
+    margin-left: 20px;
+    /* background-color: rgb(38, 123, 202); */
+    border-radius: 20px;
+}
+#para {
+    margin-top: 25px;
+    margin-left: 70px;
+}
+#l {
+    margin-left: 5px;
+}
+
+#para2 {
+    text-align: center;
+    font-weight: 200px;
+    font-family: cursive;
+}
+#oc {
+    margin-left: 45px;
+}
+#head2 {
+    padding-top: 30px;
+    font-size: 40px;
+    margin-bottom: 30px;
+    font-weight: lighter;
+    color: rgb(12, 11, 11);
+    padding-left: 120px;
+}
+/* .yo{
+     text-align: center;
+     padding-right:50px;
+     padding-left:30px;
+ }  
+  */
+#social1 {
+    font-size: 35px;
+    color: rgb(27, 205, 236);
+    margin-left: 60px;
+}
+.logo-align {
+    transform: scale(0.9);
+}
+
+.login100-social-item:hover {
+    color: rgb(236, 56, 11);
+}
+
+#social {
+    border-radius: 20px;
+}
+.logo-align {
+    position: relative;
+}
+.text-center {
+    text-align: center !important;
+}
+.pt-2,
+.py-2 {
+    padding-top: 0.5rem !important;
+}
+.social {
+    margin-bottom: 1rem;
+}
+
+#social {
+    overflow: visible;
+}
+#social {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+.site-btn-google {
+    width: 100%;
+    display: inline-block;
+    border: 1px solid #e2e2e2;
+    font-size: 16px;
+    font-weight: 600;
+    min-width: 167px;
+    padding: 18px 47px 14px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    background: none !important;
+    color: #333;
+    line-height: normal;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 0;
+}
+img {
+    max-width: 100%;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+.site-btn-facebook {
+    font-size: 16px;
+    background: #496cb3 !important;
+}
+.site-btn-custom,
+.site-btn-facebook {
+    width: 100%;
+    display: inline-block;
+    border: none;
+    font-weight: 600;
+    min-width: 167px;
+    padding: 18px 47px 14px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: normal;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 0;
+}
+.logo-align img {
+    position: absolute;
+    left: 2%;
+    bottom: 14.5%;
+}
+img {
+    max-width: 100%;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}

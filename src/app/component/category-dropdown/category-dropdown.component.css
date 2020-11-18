@@ -1,0 +1,25 @@
+.categorydropdown {
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 0 0.25em 0.25em 0.25em;
+    display: block;
+    width: 20%;
+}
+
+.dropdown-item1 {
+    color: black;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+.dropdown-sub-item {
+    color: black;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+}
+#heading {
+    border-top: 1px solid;
+    border-width: 100%;
+}
