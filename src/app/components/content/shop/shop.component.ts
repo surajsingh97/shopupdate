@@ -4,16 +4,16 @@ import {
     Input,
     AfterViewInit,
     DoCheck,
-} from '@angular/core';
-import { NavigationEnd, ActivatedRoute, Router } from '@angular/router';
-import * as _ from 'lodash';
-import { SetItemService } from 'src/app/services/set-item.service';
-import { ApiService } from 'src/app/services/api.service';
+} from "@angular/core";
+import { NavigationEnd, ActivatedRoute, Router } from "@angular/router";
+import * as _ from "lodash";
+import { SetItemService } from "src/app/services/set-item.service";
+import { ApiService } from "src/app/services/api.service";
 
 @Component({
-    selector: 'app-shop',
-    templateUrl: './shop.component.html',
-    styleUrls: ['./shop.component.css'],
+    selector: "app-shop",
+    templateUrl: "./shop.component.html",
+    styleUrls: ["./shop.component.css"],
 })
 export class ShopComponent implements OnInit {
     totalPost;
@@ -43,9 +43,9 @@ export class ShopComponent implements OnInit {
 
     sorting(event): void {
         const option = event.target.value;
-        if (option === 'Low to High') {
+        if (option === "Low to High") {
             this.post = this.post.sort((a, b) => a.Price - b.Price);
-        } else if (option === 'High to Low') {
+        } else if (option === "High to Low") {
             this.post = this.post.sort((a, b) => b.Price - a.Price);
             this.post.reverse();
         } else {
@@ -67,7 +67,7 @@ export class ShopComponent implements OnInit {
                 const request = this.route.snapshot.queryParams.category;
                 console.log(request);
                 if (this.CategoryMode) {
-                    this.apiService.request('getItem').then((res: any) => {
+                    this.apiService.request("getItem").then((res: any) => {
                         console.log(res);
                         this.post = _.filter(res, (o) => {
                             if (
@@ -90,7 +90,7 @@ export class ShopComponent implements OnInit {
                         totalItems: this.post.length,
                     };
                 } else {
-                    this.apiService.request('getItem').then((res) => {
+                    this.apiService.request("getItem").then((res) => {
                         this.post = res;
                         console.log(res);
                     });

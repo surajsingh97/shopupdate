@@ -1,20 +1,20 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { AuthComponent } from './components/authentication/auth/auth.component';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { AuthComponent } from "./components/authentication/auth/auth.component";
 const routes: Routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: "", redirectTo: "home", pathMatch: "full" },
     {
-        path: '',
+        path: "",
         loadChildren: () =>
-            import('src/app/components/admin/admin.module').then(
+            import("src/app/components/admin/admin.module").then(
                 (m) => m.AdminModule
             ),
     },
     {
-        path: '',
+        path: "",
         loadChildren: () =>
             import(
-                'src/app/components/authentication/authentication.module'
+                "src/app/components/authentication/authentication.module"
             ).then((m) => m.AuthenticationModule),
     },
 ];

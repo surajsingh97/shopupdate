@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 import {
     CanActivate,
     ActivatedRouteSnapshot,
@@ -6,20 +6,20 @@ import {
     UrlTree,
     Router,
     NavigationCancel,
-} from '@angular/router';
-import { Observable, Subject } from 'rxjs';
-import { SetNavbarService } from '../services/set-navbar.service';
-import { filter } from 'rxjs/operators';
+} from "@angular/router";
+import { Observable, Subject } from "rxjs";
+import { SetNavbarService } from "../services/set-navbar.service";
+import { filter } from "rxjs/operators";
 
 @Injectable({
-    providedIn: 'root',
+    providedIn: "root",
 })
 export class AuthorizeGuard implements CanActivate {
     constructor(private service: SetNavbarService, private route: Router) {
         route.events
             .pipe(filter((event) => event instanceof NavigationCancel))
             .subscribe((event: NavigationCancel) => {
-                localStorage.setItem('url', event.url);
+                localStorage.setItem("url", event.url);
             });
     }
 
@@ -27,7 +27,7 @@ export class AuthorizeGuard implements CanActivate {
         if (this.service.loggedIn()) {
             return true;
         } else {
-            this.route.navigate(['/auth']);
+            this.route.navigate(["/auth"]);
         }
     }
 }

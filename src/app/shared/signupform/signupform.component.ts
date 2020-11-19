@@ -1,19 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { ApiService } from 'src/app/services/api.service';
+import { Component, OnInit } from "@angular/core";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import { ApiService } from "src/app/services/api.service";
 
 @Component({
-    selector: 'app-signupform',
-    templateUrl: './signupform.component.html',
-    styleUrls: ['./signupform.component.css'],
+    selector: "app-signupform",
+    templateUrl: "./signupform.component.html",
+    styleUrls: ["./signupform.component.css"],
 })
 export class SignupformComponent implements OnInit {
-    msg: any = 'Create An Account';
+    msg: any = "Create An Account";
     signupform: FormGroup;
-    genders = ['Male', 'Female', 'Others'];
-    forbiddennames = ['suraj', 'vikul', 'vishal', 'shivani'];
-    pattern1 = '^((\\+91-?)|0)?[0-9]{10}$';
+    genders = ["Male", "Female", "Others"];
+    forbiddennames = ["suraj", "vikul", "vishal", "shivani"];
+    pattern1 = "^((\\+91-?)|0)?[0-9]{10}$";
     show = false;
 
     constructor(private router: Router, private register: ApiService) {}
@@ -65,10 +65,10 @@ export class SignupformComponent implements OnInit {
     passwordcheck(control): object {
         if (control.value != null) {
             const conpass = control.value;
-            const pass = control.root.get('passwordc');
+            const pass = control.root.get("passwordc");
             if (pass) {
                 const password = pass.value;
-                if (conpass !== '' && password !== '') {
+                if (conpass !== "" && password !== "") {
                     if (conpass !== password) {
                         return {
                             passwordvalidty: true,
@@ -85,7 +85,7 @@ export class SignupformComponent implements OnInit {
             console.log(this.signupform.value);
             try {
                 const res = await this.register.request(
-                    'verify',
+                    "verify",
                     this.signupform.value
                 );
                 this.msg = res.msg;
