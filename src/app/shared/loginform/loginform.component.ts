@@ -3,6 +3,7 @@ import { Router, NavigationEnd, ActivatedRoute } from "@angular/router";
 import { NgForm, EmailValidator } from "@angular/forms";
 import { filter } from "rxjs/operators";
 import { ApiService } from "src/app/services/api.service";
+import { SetItemService } from "src/app/services/set-item.service";
 
 @Component({
     selector: "app-loginform",
@@ -14,25 +15,29 @@ export class LoginformComponent implements OnInit {
     msg: any;
     error: any;
     show = false;
-    previousUrl: boolean = localStorage.getItem("url") ? true : false;
 
-    constructor(private router: Router, private login: ApiService) {}
+    constructor(
+        private router: Router,
+        private login: ApiService,
+        private setService: SetItemService
+    ) {}
 
     ngOnInit(): void {}
 
     async onsubmit(form: NgForm): Promise<void> {
         if (this.loginForm.valid) {
             try {
-                const username = this.loginForm.controls.email.value;
+                const userName = this.loginForm.controls.email.value;
                 const password = this.loginForm.controls.password.value;
                 const res = await this.login.request("login", {
-                    email: username,
+                    email: userName,
                     password,
                 });
                 localStorage.setItem("token", res.token);
-                const url = localStorage.getItem("url");
-                if (this.previousUrl) {
-                    this.router.navigateByUrl(url);
+                const url = this.setService.getValue();
+                if (Boolean(url)) {
+                    console.log(url);
+                    this.router.navigateByUrl(`${url}`);
                 }
                 this.router.navigateByUrl("/home");
             } catch (error) {

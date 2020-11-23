@@ -12,7 +12,7 @@ export class SignupformComponent implements OnInit {
     msg: any = "Create An Account";
     signupform: FormGroup;
     genders = ["Male", "Female", "Others"];
-    forbiddennames = ["suraj", "vikul", "vishal", "shivani"];
+    forbiddenNames = ["suraj", "vikul", "vishal", "shivani"];
     pattern1 = "^((\\+91-?)|0)?[0-9]{10}$";
     show = false;
 
@@ -45,7 +45,7 @@ export class SignupformComponent implements OnInit {
     }
 
     foorbiddenname(control: FormControl): object {
-        if (this.forbiddennames.indexOf(control.value) !== -1) {
+        if (this.forbiddenNames.indexOf(control.value) !== -1) {
             return { nameisforbiddentrue: true };
         }
         return null;

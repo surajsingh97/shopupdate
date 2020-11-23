@@ -8,7 +8,7 @@ import { Router } from "@angular/router";
     styleUrls: ["./header.component.css"],
 })
 export class HeaderComponent implements OnInit {
-    showcategory = false;
+    showCategory = false;
     showwomenCategory = false;
     showkidCategory = false;
     @ViewChild("f", { static: false }) searchForm: NgForm;
@@ -18,18 +18,18 @@ export class HeaderComponent implements OnInit {
     ngOnInit(): void {}
 
     showMen(): void {
-        this.showcategory = !this.showcategory;
+        this.showCategory = !this.showCategory;
         this.showwomenCategory = false;
         this.showkidCategory = false;
     }
     showWomen(): void {
         this.showwomenCategory = !this.showwomenCategory;
-        this.showcategory = false;
+        this.showCategory = false;
         this.showkidCategory = false;
     }
     showKid(): void {
         this.showkidCategory = !this.showkidCategory;
         this.showwomenCategory = false;
-        this.showcategory = false;
+        this.showCategory = false;
     }
 }

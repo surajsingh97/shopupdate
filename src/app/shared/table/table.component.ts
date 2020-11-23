@@ -13,7 +13,6 @@ import { connectableObservableDescriptor } from "rxjs/internal/observable/Connec
     styleUrls: ["./table.component.css"],
 })
 export class TableComponent implements OnInit {
-    id: any;
     gap: any;
     custompageindex = 0;
     nAcending = true;

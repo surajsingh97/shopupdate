@@ -14,8 +14,8 @@ export class AdditemComponent implements OnInit {
     heading = "Add Product";
     editMode = false;
     req: any;
-    images;
-    newitem: FormGroup;
+    images: any;
+    newItem: FormGroup;
     Genders = ["Male", "Female", "Others"];
     data: any;
     itemData: any;
@@ -31,10 +31,10 @@ export class AdditemComponent implements OnInit {
     }
     show: any;
     showButton = true;
-    showdropdown = false;
+    showDropdown = false;
 
     ngOnInit(): void {
-        this.newitem = new FormGroup({
+        this.newItem = new FormGroup({
             productName: new FormControl(null, [Validators.required]),
             Description: new FormControl(null, Validators.required),
             Price: new FormControl(null, Validators.required),
@@ -53,13 +53,13 @@ export class AdditemComponent implements OnInit {
     populateData(): void {
         this.data = this.setService.getValue();
         console.log(this.data);
-        this.newitem.patchValue({
+        this.newItem.patchValue({
             productName: this.data.productName,
             Description: this.data.Description,
             Price: this.data.Price,
             Gender: this.data.Gender,
             Quantity: this.data.Quantity,
-            Size: this.data.Size,
+            size: this.data.Size,
             Suplier: this.data.Suplier,
             Category: this.data.Category,
             subCategory: this.data.subCategory,
@@ -68,7 +68,16 @@ export class AdditemComponent implements OnInit {
 
     async onsubmit(e): Promise<void> {
         const formData = new FormData();
-        formData.append("newItem", this.newitem.value);
+        formData.append("productName", this.newItem.get("productName").value);
+        formData.append("Description", this.newItem.get("Description").value);
+        formData.append("Size", this.newItem.get("Size").value);
+        formData.append("Quantity", this.newItem.get("Quantity").value);
+        formData.append("Price", this.newItem.get("Price").value);
+        formData.append("Gender", this.newItem.get("Gender").value);
+        formData.append("Suplier", this.newItem.get("Suplier").value);
+        formData.append("Category", this.newItem.get("Category").value);
+        formData.append("subCategory", this.newItem.get("subCategory").value);
+        // formData.append("newItem", JSON.stringify(this.newItem.value));
         formData.append("file", this.images);
         if (Boolean(this.req)) {
             formData.append("req", this.req);
@@ -76,7 +85,7 @@ export class AdditemComponent implements OnInit {
             this.router.navigateByUrl("/admin");
         } else {
             console.log(formData);
-            if (this.newitem.valid) {
+            if (this.newItem.valid) {
                 await this.apiService.request("uploadItem", formData);
                 this.router.navigateByUrl("/admin");
             } else {

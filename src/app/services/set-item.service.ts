@@ -14,7 +14,7 @@ export class SetItemService {
         this.Data = value;
     }
 
-    public getValue(): void {
+    public getValue(): any {
         return this.Data;
     }
 }

@@ -5,7 +5,7 @@
 
             <hr />
         </div>
-        <form id="form1" [formGroup]="newitem">
+        <form id="form1" [formGroup]="newItem">
             <h2>Basic Info</h2>
             <div class="form-group">
                 <div class="col-md-8">
@@ -19,14 +19,14 @@
                     />
                     <span
                         *ngIf="
-                            !newitem.get('productName').valid &&
-                            newitem.get('productName').touched
+                            !newItem.get('productName').valid &&
+                            newItem.get('productName').touched
                         "
                         class="help-block"
                     >
                         <span
                             *ngIf="
-                                newitem.get('productName').errors['required']
+                                newItem.get('productName').errors['required']
                             "
                             class="help-block"
                         >
@@ -46,14 +46,14 @@
                     ></textarea>
                     <span
                         *ngIf="
-                            !newitem.get('Description').valid &&
-                            newitem.get('Description').touched
+                            !newItem.get('Description').valid &&
+                            newItem.get('Description').touched
                         "
                         class="help-block"
                     >
                         <span
                             *ngIf="
-                                newitem.get('Description').errors['required']
+                                newItem.get('Description').errors['required']
                             "
                             class="help-block"
                         >
@@ -74,13 +74,13 @@
                     />
                     <span
                         *ngIf="
-                            !newitem.get('Price').valid &&
-                            newitem.get('Price').touched
+                            !newItem.get('Price').valid &&
+                            newItem.get('Price').touched
                         "
                         class="help-block"
                     >
                         <span
-                            *ngIf="newitem.get('Price').errors['required']"
+                            *ngIf="newItem.get('Price').errors['required']"
                             class="help-block"
                         >
                             *This Field Is Required!</span
@@ -100,13 +100,13 @@
                     </select>
                     <span
                         *ngIf="
-                            !newitem.get('Gender').valid &&
-                            newitem.get('Gender').touched
+                            !newItem.get('Gender').valid &&
+                            newItem.get('Gender').touched
                         "
                         class="help-block"
                     >
                         <span
-                            *ngIf="newitem.get('Gender').errors['required']"
+                            *ngIf="newItem.get('Gender').errors['required']"
                             class="help-block"
                         >
                             *This Field Is Required</span
@@ -130,13 +130,13 @@
                     </select>
                     <span
                         *ngIf="
-                            !newitem.get('Size').valid &&
-                            newitem.get('Size').touched
+                            !newItem.get('Size').valid &&
+                            newItem.get('Size').touched
                         "
                         class="help-block"
                     >
                         <span
-                            *ngIf="newitem.get('Size').errors['required']"
+                            *ngIf="newItem.get('Size').errors['required']"
                             class="help-block"
                         >
                             *This Field Is Required</span
@@ -156,13 +156,13 @@
                     />
                     <span
                         *ngIf="
-                            !newitem.get('Quantity').valid &&
-                            newitem.get('Quantity').touched
+                            !newItem.get('Quantity').valid &&
+                            newItem.get('Quantity').touched
                         "
                         class="help-block"
                     >
                         <span
-                            *ngIf="newitem.get('Quantity').errors['required']"
+                            *ngIf="newItem.get('Quantity').errors['required']"
                             class="help-block"
                         >
                             *This Field Is Required!</span
@@ -182,13 +182,13 @@
                     />
                     <span
                         *ngIf="
-                            !newitem.get('File').valid &&
-                            newitem.get('File').touched
+                            !newItem.get('File').valid &&
+                            newItem.get('File').touched
                         "
                         class="help-block"
                     >
                         <span
-                            *ngIf="newitem.get('File').errors['required']"
+                            *ngIf="newItem.get('File').errors['required']"
                             class="help-block"
                         >
                             *This Field Is Required</span
@@ -211,13 +211,13 @@
                     />
                     <span
                         *ngIf="
-                            !newitem.get('Suplier').valid &&
-                            newitem.get('Suplier').touched
+                            !newItem.get('Suplier').valid &&
+                            newItem.get('Suplier').touched
                         "
                         class="help-block"
                     >
                         <span
-                            *ngIf="newitem.get('Suplier').errors['required']"
+                            *ngIf="newItem.get('Suplier').errors['required']"
                             class="help-block"
                         >
                             *This Field Is Required</span
@@ -238,13 +238,13 @@
                     </select>
                     <span
                         *ngIf="
-                            !newitem.get('Category').valid &&
-                            newitem.get('Category').touched
+                            !newItem.get('Category').valid &&
+                            newItem.get('Category').touched
                         "
                         class="help-block"
                     >
                         <span
-                            *ngIf="newitem.get('Category').errors['required']"
+                            *ngIf="newItem.get('Category').errors['required']"
                             class="help-block"
                         >
                             *This Field Is Required</span
@@ -274,14 +274,14 @@
                     </select>
                     <span
                         *ngIf="
-                            !newitem.get('subCategory').valid &&
-                            newitem.get('subCategory').touched
+                            !newItem.get('subCategory').valid &&
+                            newItem.get('subCategory').touched
                         "
                         class="help-block"
                     >
                         <span
                             *ngIf="
-                                newitem.get('subCategory').errors['required']
+                                newItem.get('subCategory').errors['required']
                             "
                             class="help-block"
                         >
