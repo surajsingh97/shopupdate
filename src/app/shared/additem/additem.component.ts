@@ -67,51 +67,14 @@ export class AdditemComponent implements OnInit {
     }
 
     async onsubmit(e): Promise<void> {
+        const formData = new FormData();
+        formData.append("newItem", this.newitem.value);
+        formData.append("file", this.images);
         if (Boolean(this.req)) {
-            const formData = new FormData();
-            formData.append(
-                "productName",
-                this.newitem.get("productName").value
-            );
-            formData.append(
-                "Description",
-                this.newitem.get("Description").value
-            );
-            formData.append("Size", this.newitem.get("Size").value);
-            formData.append("Quantity", this.newitem.get("Quantity").value);
-            formData.append("Price", this.newitem.get("Price").value);
-            formData.append("Gender", this.newitem.get("Gender").value);
-            formData.append("Suplier", this.newitem.get("Suplier").value);
-            formData.append("Category", this.newitem.get("Category").value);
-            formData.append(
-                "subCategory",
-                this.newitem.get("subCategory").value
-            );
-            formData.append("file", this.images);
             formData.append("req", this.req);
             await this.apiService.request("Update", formData);
             this.router.navigateByUrl("/admin");
         } else {
-            const formData = new FormData();
-            formData.append(
-                "productName",
-                this.newitem.get("productName").value
-            );
-            formData.append(
-                "Description",
-                this.newitem.get("Description").value
-            );
-            formData.append("Size", this.newitem.get("Size").value);
-            formData.append("Quantity", this.newitem.get("Quantity").value);
-            formData.append("Price", this.newitem.get("Price").value);
-            formData.append("Gender", this.newitem.get("Gender").value);
-            formData.append("Suplier", this.newitem.get("Suplier").value);
-            formData.append("Category", this.newitem.get("Category").value);
-            formData.append(
-                "subCategory",
-                this.newitem.get("subCategory").value
-            );
-            formData.append("file", this.images);
             console.log(formData);
             if (this.newitem.valid) {
                 await this.apiService.request("uploadItem", formData);
