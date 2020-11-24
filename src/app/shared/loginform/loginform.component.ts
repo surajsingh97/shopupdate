@@ -36,13 +36,11 @@ export class LoginformComponent implements OnInit {
                 localStorage.setItem("token", res.token);
                 const url = this.setService.getValue();
                 if (Boolean(url)) {
-                    console.log(url);
-                    this.router.navigateByUrl(`${url}`);
+                    this.router.navigate([url]);
                 }
                 this.router.navigateByUrl("/home");
             } catch (error) {
                 this.show = true;
-                console.log(error.error.message);
                 this.msg = error.error.message;
             }
         }

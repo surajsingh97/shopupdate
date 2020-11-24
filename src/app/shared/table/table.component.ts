@@ -6,7 +6,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 import * as _ from "lodash";
 import $ from "jquery";
 import { ApiService } from "src/app/services/api.service";
-import { connectableObservableDescriptor } from "rxjs/internal/observable/ConnectableObservable";
+
 @Component({
     selector: "app-table",
     templateUrl: "./table.component.html",
@@ -58,15 +58,13 @@ export class TableComponent implements OnInit {
     }
 
     applyFilter(filterValue: string): void {
-        console.log(filterValue);
         filterValue = filterValue.trim();
         filterValue = filterValue.toLowerCase();
         this.dataSource.filter = filterValue;
     }
 
     edit(element, i): void {
-        console.log(this.setService.setValue(element));
-        localStorage.setItem("edit", JSON.stringify(element));
+        this.setService.setValue(element);
         this.route.navigate(["/item/edit-item"], {
             queryParams: { _name: element.productName },
         });
@@ -77,7 +75,6 @@ export class TableComponent implements OnInit {
         if (v === true) {
             await this.apiService.request("Delete", element);
             const data = await this.apiService.request("getItem");
-            console.log("after delete", data);
             this.dataSource = new MatTableDataSource(data);
             this.dataSource.paginator = this.paginator;
             this.route.navigateByUrl("/admin");
