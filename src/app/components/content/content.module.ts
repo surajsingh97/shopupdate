@@ -10,7 +10,7 @@ import { CarouselModule } from "ngx-owl-carousel-o";
 import { ShopComponent } from "./shop/shop.component";
 import { FiltersComponent } from "src/app/component/filters/filters.component";
 import { NgxPaginationModule } from "ngx-pagination";
-import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProductDetailComponent } from "./product-detail/product-detail.component";
 
 @NgModule({
     declarations: [

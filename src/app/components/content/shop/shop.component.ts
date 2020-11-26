@@ -46,7 +46,7 @@ export class ShopComponent implements OnInit {
         if (option === "Low to High") {
             this.post = this.post.sort((a, b) => a.Price - b.Price);
         } else if (option === "High to Low") {
-            this.post = this.post.sort((a, b) => b.Price - a.Price);
+            this.post = this.post.sort((a, b) => a.Price - b.Price);
             this.post.reverse();
         } else {
             this.post.reverse();
