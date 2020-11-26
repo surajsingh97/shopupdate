@@ -30,9 +30,7 @@
     max-width: 100%;
     height: auto;
 }
-.ftco-animate:hover {
-    transform: scale(0.9);
-}
+
 .product {
     position: relative;
     flex-grow: 1;

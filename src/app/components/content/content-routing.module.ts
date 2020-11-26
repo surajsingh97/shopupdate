@@ -4,11 +4,12 @@ import { HomeComponent } from "./home/home.component";
 import { ShopComponent } from "./shop/shop.component";
 import { HeaderComponent } from "src/app/shared/header/header.component";
 import { AuthorizeGuard } from "src/app/guard/authorize.guard";
+import { ProductDetailComponent } from "./product-detail/product-detail.component";
 
 const routes: Routes = [
     { path: "home", component: HomeComponent },
     { path: "shop", component: ShopComponent, canActivate: [AuthorizeGuard] },
-    { path: "shop/:option", component: ShopComponent },
+    { path: "details", component: ProductDetailComponent },
 ];
 
 @NgModule({

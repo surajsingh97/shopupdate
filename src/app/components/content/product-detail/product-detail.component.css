@@ -1,0 +1,114 @@
+.section_padding {
+    margin-top: 30px;
+}
+#product {
+    height: 20%;
+    width: 100%;
+}
+
+hr {
+    width: 80%;
+}
+
+p {
+    font-family: roboto, sans-serif;
+    line-height: 2;
+    font-size: 15px;
+    margin-bottom: 0;
+    color: #606060;
+    font-weight: 400;
+}
+input {
+    border-radius: 50px;
+}
+textarea {
+    border-radius: 50px;
+}
+#butto {
+    background-color: pink;
+    border-radius: 20px;
+}
+#butto:hover {
+    border: 1px solid pink;
+    background-color: white;
+}
+#home-tab {
+    border-radius: 20px;
+}
+#review-tab {
+    border-radius: 20px;
+}
+.best_seller {
+    padding-top: 80px;
+}
+#title {
+    float: left;
+    font-size: xx-large;
+    font-weight: bold;
+    opacity: 0.5;
+    color: black;
+}
+
+.row {
+    padding-top: 50px;
+}
+
+.section_padding {
+    padding-top: 5px;
+}
+
+h5 {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 0;
+    margin-top: 15px;
+    margin-left: 50px;
+    float: center;
+}
+
+.single_category_product .category_product_text p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #606060;
+    margin-left: 80px;
+}
+.s_product_text .card_area .product_count input {
+    border: 0 solid transparent;
+    text-align: center;
+}
+
+.s_product_text .product_count .input-number {
+    display: inline-block;
+    border: 1px solid black;
+    width: 60px;
+}
+.product_count {
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-left: 5px;
+    block-size: 30px;
+    width: 100px;
+}
+.btn {
+    font-weight: lighter;
+    border-radius: 30px;
+}
+.btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.add_to_cart {
+    padding-top: 20px;
+}
+
+.card_area {
+    padding-top: 30px;
+}
+h3 {
+    font-size: 24px;
+    line-height: 25px;
+}
+h2 {
+    color: blue;
+}

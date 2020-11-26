@@ -1,0 +1,269 @@
+<!--================Single Product Area =================-->
+<div class="product_image_area section_padding">
+    <div class="container">
+        <div class="row s_product_inner">
+            <div class="col-lg-5">
+                <div class="product_slider_img">
+                    <div id="vertical">
+                        <div>
+                            <img
+                                src="http://localhost:3000/static/{{
+                                    item.File
+                                }}"
+                                id="product"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 offset-lg-1">
+                <div class="s_product_text">
+                    <h3>{{ item.productName }}</h3>
+                    <h2>{{ item.Price | currency: "INR" }}</h2>
+                    <p>{{ item.Description }}</p>
+                    <div class="card_area">
+                        <div class="product_count d-inline-block">
+                            &nbsp;
+                            <span class="inumber-decrement">
+                                <i class="fa fa-minus"></i
+                            ></span>
+                            <input
+                                class="input-number"
+                                type="text"
+                                value="1"
+                                min="0"
+                                max="10"
+                            />
+                            <span class="number-increment">
+                                <i class="fa fa-plus"></i></span
+                            >&nbsp;&nbsp;
+                        </div>
+                        <div class="add_to_cart">
+                            <a
+                                href="javascript:void('0')"
+                                class="btn btn-primary btn-lg"
+                                >ADD TO CART</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<section class="product_description_area">
+    <div class="container">
+        <ul class="nav nav-pills" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a
+                    class="nav-link"
+                    id="home-tab"
+                    data-toggle="tab"
+                    href="#home"
+                    role="tab"
+                    aria-controls="home"
+                    aria-selected=""
+                    >Description</a
+                >
+            </li>
+            <li class="nav-item">
+                <a
+                    class="nav-link active"
+                    id="review-tab"
+                    data-toggle="tab"
+                    href="#review"
+                    role="tab"
+                    aria-controls="review"
+                    aria-selected="false"
+                    >Reviews</a
+                >
+            </li>
+        </ul>
+        <br />
+        <br />
+        <div class="tab-content" id="myTabContent">
+            <div
+                class="tab-pane fade"
+                id="home"
+                role="tabpanel"
+                aria-labelledby="home-tab"
+            >
+                <p>{{ item.Description }}</p>
+            </div>
+
+            <div
+                class="tab-pane fade show active"
+                id="review"
+                role="tabpanel"
+                aria-labelledby="review-tab"
+            >
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="review_list">
+                            <div class="review_item">
+                                <div class="media">
+                                    <div class="d-flex">
+                                        <img src="" alt="" />
+                                    </div>
+                                    <div class="media-body">
+                                        <h4>Blake Ruiz</h4>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip
+                                    ex ea commodo
+                                </p>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="review_box">
+                            <h4>Add a Review</h4>
+                            <p>Your Rating:</p>
+                            <ul class="list">
+                                <li>
+                                    <a href="#"> <i class="fa fa-star"></i> </a
+                                    >&nbsp;
+                                    <a href="#"> <i class="fa fa-star"></i> </a
+                                    >&nbsp;
+
+                                    <a href="#">
+                                        <i class="fa fa-star"></i>
+                                    </a>
+                                    <a href="#"
+                                        >&nbsp;
+                                        <i class="fa fa-star"></i>
+                                    </a>
+                                    &nbsp;
+                                    <a href="#">
+                                        <i class="fa fa-star"></i>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <form
+                                class="row contact_form"
+                                action="contact_process.php"
+                                method="post"
+                                novalidate="novalidate"
+                            >
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            name="name"
+                                            placeholder="Your Full name"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input
+                                            type="email"
+                                            class="form-control"
+                                            name="email"
+                                            placeholder="Email Address"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            name="number"
+                                            placeholder="Phone Number"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea
+                                            class="form-control"
+                                            name="message"
+                                            rows="1"
+                                            placeholder="Review"
+                                        ></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 text-right">
+                                    <button
+                                        type="submit"
+                                        id="butto"
+                                        class="btn btn-md"
+                                    >
+                                        Submit Now
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Product Description Area =================-->
+<hr />
+<!-- shipping details part end-->
+<section class="shipping_details section_padding border_top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="single_shopping_details">
+                    <img src="assets/images/icon_1.png" alt="" />
+                    <h4>Free shipping</h4>
+                    <p>
+                        Divided face for bearing the divide unto seed winged
+                        divided light Forth.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single_shopping_details">
+                    <img src="assets/images/icon_2.png" alt="" />
+                    <h4>Free shipping</h4>
+                    <p>
+                        Divided face for bearing the divide unto seed winged
+                        divided light Forth.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single_shopping_details">
+                    <img src="assets/images/icon_3.png" alt="" />
+                    <h4>Free shipping</h4>
+                    <p>
+                        Divided face for bearing the divide unto seed winged
+                        divided light Forth.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single_shopping_details">
+                    <img src="assets/images/icon_4.png" alt="" />
+                    <h4>Free shipping</h4>
+                    <p>
+                        Divided face for bearing the divide unto seed winged
+                        divided light Forth.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br /><br />
+<!-- shipping details part end-->

@@ -103,4 +103,9 @@ export class ShopComponent implements OnInit {
             }
         });
     }
+
+    onShop(element): void {
+        this.setitem.setValue(element);
+        this.router.navigateByUrl("details");
+    }
 }
